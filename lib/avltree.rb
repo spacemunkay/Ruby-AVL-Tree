@@ -31,8 +31,6 @@ class AVLTree
       else
         prev_node.right = i_node
       end
-      #TODO set curr_node height routine
-      #i_node.parent.balance
     end
     i_node.update_height
     @root = i_node.balance 
@@ -152,7 +150,6 @@ class AVLNode
     l_height = @left.nil? ? 0 : @left.height
     r_height = @right.nil? ? 0 : @right.height
     @height = ((l_height > r_height) ? l_height : r_height) + 1
-    #TODO remove this
     @parent.update_height unless @parent.nil?
   end
 
